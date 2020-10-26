@@ -1,0 +1,50 @@
+.image-title
+{
+    text-align: right;
+    margin: 0.5em 0;
+}
+
+.delete-icon
+{
+    border: none;
+    cursor: pointer;
+    background-repeat:no-repeat;
+    background-image: url('../data/images/delete.png');
+    background-color: transparent;
+    background-size:30px 30px; 
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin: 0.1em auto;
+}
+
+.delete
+{
+    display: block;
+    width: 100%;
+    position: absolute;
+	box-sizing: border-box;
+	color: white;
+	background: #555555;
+	width: 100%;
+    bottom: 0px;
+	opacity: 0;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.thumbnail:hover .delete
+{
+    opacity: 0.6;
+	transition-duration: 0.5s;
+}
+
+.batch-delete
+{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 12px;
+    left: 24px;
+    font-size: 18px;
+}

@@ -1,0 +1,157 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: rgb(0, 75, 130);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #363636;
+}
+
+.log-back
+{
+    width: 80%;
+    margin: auto;
+}
+
+#reglog-form input[type=text], input[type=password], input[type=email]
+{
+    width: 100%;
+    font-size: 1.1em;
+    padding: 5px 10px 5px 10px;
+    margin: 6px 0 20px;
+    display: inline-block;
+    border: none;
+    border-bottom: 1.5px solid #363636;
+    box-sizing: border-box;
+    background: #f2f2f2;
+}
+  
+  
+.log-button
+{
+    display: block;
+    width: 50%;
+    background-color: rgb(51, 193, 255);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+  
+.log-button:hover
+{
+    background-color: rgb(49, 179, 235);
+}
+
+.log-wrapper, .reg-wrapper
+{
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 18px 25px;
+    float: right;
+    width: 30%;
+    box-shadow: 2px 2px 5px #1b1b1b;
+}
+
+.log-wrapper
+{
+    margin: 60px 5% auto auto;
+}
+
+.reg-wrapper
+{
+    margin: 30px 5% auto auto;
+}
+
+.welcome
+{
+    width: 50%;
+    height: 100%;
+    margin-top: 20vh;
+    text-align: center;
+    color: whitesmoke;
+    display: inline-block;
+    font-size: 3em;
+}
+
+.log-title
+{
+    letter-spacing: 0.10em;
+	font-size: 2em;
+}
+
+.log-wrapper a:link, .reg-wrapper a:link
+{
+    color:rgb(28, 130, 196);
+    text-decoration: none;
+}
+
+.log-wrapper a:visited, .reg-wrapper a:visited
+{
+    color:rgb(28, 130, 196);
+}
+
+.log-wrapper a:hover, .reg-wrapper a:hover
+{
+    text-decoration: underline;
+}
+
+.log-wrapper label, .reg-wrapper label
+{
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.error
+{
+    color:rgb(173, 41, 41);
+    font-size: 0.8em;
+    margin-left: 2em;
+}
+
+@media only screen and (max-width: 900px){
+    .welcome {
+        display: none;
+    }
+    .log-wrapper {
+        width: 60%;
+        float: none;
+        display: block;
+        margin: 10vh auto 10vh;
+        border-radius: 30px;
+    }
+    .reg-wrapper {
+        width: 60%;
+        float: none;
+        display: block;
+        margin: 5vh auto 5vh;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .welcome {
+        display: none;
+    }
+    .log-wrapper {
+        width: 85%;
+        float: none;
+        display: block;
+        margin: 10vh auto 10vh;
+        box-shadow: none;
+    }
+    .reg-wrapper {
+        width: 85%;
+        float: none;
+        display: block;
+        margin: 5vh auto 5vh;
+        box-shadow: none;
+    }
+    body {
+        background-color: #f2f2f2;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>发现</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}" />
+	<script src="{{ url_for('static', filename='js/modal.js') }}" type="text/javascript"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="menu-wrapper">
+			<div id="menu" class="container">
+				<span id="theme">图片资源管理</span>
+				<ul class="option">
+					<li><a href="{{ url_for('discover') }}">发现</a></li>
+					<li class="current_page_item"><a href="{{ url_for('realtime') }}">实时</a></li>
+				</ul>
+				<div class="dropdown">
+					<a class="logging" href="#">{{ username }}</a>
+					<div class="dropdown-content">
+						<a href="{{ url_for('upload') }}">上传照片</a>
+						<a href="/logout/">注销</a>
+					</div>
+				</div>
+				<form action="/search/">
+					<input id="search" placeholder="关键字" name="search" type="text" autocomplete="off">
+				</form>
+			</div>
+			<!-- end #menu -->
+		</div>
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<div id="logo">
+					<h1><a href="#">大标题</a></h1>
+					<p>副标题</p>
+				</div>
+			</div>
+		</div>
+		<div id="myModal" class="modal">
+			<span class="close">×</span>
+			<div class="flex-box">
+				<div class="flex-item">
+					<img class="modal-content" id="img01">
+					<div id="caption"></div>
+				</div>
+			</div>
+		</div>
+		<!--	<div id="banner" class="container"> <a href="#" class="image"><img src="{{ url_for('static', filename='data/images/pic01.jpg') }}"/></a> </div>-->
+		<div id="portfolio-wrapper">
+			<div class="label-div">
+				<div id="overlay"><img src="/static/data/images/ajax-loader.gif" alt="Be patient..." /></div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright" class="container">
+		<p>&copy; Untitled. All rights reserved. | Photos by Fotogrph | Design by TEMPLATED.</p>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	document.onloadeddata = $.ajax({
+		type: "POST",
+		url: "/image_list_get/",
+		dataType: "json",
+		// headers: {"Content-Type": "application/json"},
+		contentType: "application/json; charset=utf-8",
+		data: JSON.stringify({"type": "time"}),
+		success: function(response){
+			document.getElementById("overlay").outerHTML = "";
+			// response = $.parseJSON(response)
+			// locolStorage.setItem("result", response)
+			console.log(response.response);
+			result = response.response["result"];
+			place = document.getElementsByClassName("label-div")[0]
+			for(var kind of ["Today", "Yesterday", "Before"]){
+				var paragraph = document.createElement("p");
+				paragraph.className = "label";
+				label = document.createTextNode(kind);
+				paragraph.append(label);
+				place.append(paragraph);
+				href = document.createElement("a");
+				href.href = "/more/time/"+kind;
+				href.className = "icon icon-arrow-right button";
+				href.innerHTML = "更多";
+				place.append(href);
+				images = document.createElement("div");
+				images.id = "portfolio";
+				images.className = "container";
+				place.append(images);
+				for(var i in result[kind]){
+					if(i >= 8){
+						break;
+					}
+					image = result[kind][i];
+					column = document.createElement("div");
+					column.className = "column";
+					images.append(column);
+					thumbnail = document.createElement("div");
+					thumbnail.className = "thumbnail";
+					column.append(thumbnail);
+					image_item = document.createElement("img");
+					image_item.src = "/"+image["location"]+".thumbnail.png";
+					image_item.alt = image["name"];
+					image_item.className = "image image-full";
+					image_item.onclick = function(){displayModal(this)};
+					thumbnail.append(image_item);
+					download_button = document.createElement("div");
+                    download_button.className = "download";
+					thumbnail.append(download_button);
+					link = document.createElement("a");
+					link.href = "/"+image["location"]+".thumbnail.png";
+					link.download = image["name"];
+					download_button.append(link);
+					icon = document.createElement("img");
+					icon.className = "download-icon";
+					icon.src = "/static/data/images/download.png";
+					link.append(icon);
+					info = document.createElement("div");
+					info.className = "info";
+					thumbnail.append(info);
+					title = document.createElement("span");
+					title.className = "name-info";
+					title.innerHTML = image["name"];
+					info.append(title);
+					user = document.createElement("span");
+					user.className = "user-info";
+					user.innerHTML = image["by"];
+					info.append(user);
+				}
+			}
+		}
+	});
+</script>
+</html>

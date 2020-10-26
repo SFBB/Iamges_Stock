@@ -1,0 +1,787 @@
+
+fhtml, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: rgb(15, 12, 11);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #363636;
+}
+
+h1, h2, h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+p, ol, ul
+{
+	margin-top: 0px;
+}
+
+p
+{
+	line-height: 190%;
+}
+
+a
+{
+	color: #171717;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: none;
+}
+
+.thumbnail
+{
+	height: 0px;
+	background: rgb(243, 243, 243);
+	position: relative;
+	padding-bottom: 75%;
+}
+
+.thumbnail:hover
+{
+	background-color: rgb(12, 6, 0);
+}
+
+.image-full
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	cursor: zoom-in;
+}
+
+.info
+{
+	position: absolute;
+	box-sizing: border-box;
+	color: white;
+	background: #555555;
+	width: 100%;
+    bottom: 0px;
+	opacity: 0;
+	padding: 5px 10px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.info .name-info
+{
+	width: 60%;
+    display: inline-block;
+    overflow: hidden;
+    height: 1.2em;
+    text-overflow: ellipsis;
+}
+
+.info .user-info
+{
+	width: 35%;
+	height: 1.2em;
+	float: right;
+	font-size: 0.7em;
+	margin-top: 0.3em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: right;
+}
+
+.thumbnail .user-info
+{
+	font-size: 0.5em;
+    margin-top: 0.6em;
+}
+
+.thumbnail .name-info
+{
+	font-size: 0.8em;
+}
+
+.download
+{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+    top: 12px;
+    right: 24px;
+	font-size: 18px;
+	opacity: 0;
+}
+
+.download-icon
+{
+	width: 35px;
+	height: 35px;
+	object-fit: scale-down;
+}
+
+.thumbnail:hover .info
+{
+	opacity: 0.8;
+	transition-duration: 0.5s;
+}
+
+.thumbnail:hover .download
+{
+	opacity: 0.85;
+	transition-duration: 0.5s;
+}
+
+.thumbnail:hover .image-full
+{
+	opacity: 0.8;
+	transition-duration: 0.5s;
+}
+
+.image-left
+{
+	float: left;
+	margin: 0 2em 2em 0;
+}
+
+.image-centered
+{
+	display: block;
+	margin: 0 0 2em 0;
+}
+
+.image-centered img
+{
+	margin: 0 auto;
+	width: auto;
+}
+
+hr
+{
+	display: none;
+}
+
+#top-button
+{
+	display: none;
+	height: 25px;
+	width: 25px;
+	box-sizing: content-box;
+	position:fixed;
+	bottom: 20vh;
+	right: 2.5vw;
+	z-index: 1;
+	background-color: rgb(123, 125, 129);
+	border: none;
+	border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#top-button:hover
+{
+	background-color: rgb(205, 206, 207);
+	transition: 0.5s;
+}
+
+#top-button img
+{
+	height: 25px;
+	width: 25px;
+	object-fit: scale-down;
+}
+
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+
+.title
+{
+	margin-bottom: 2em;
+	text-transform: uppercase;
+}
+
+.title h2
+{
+	letter-spacing: 0.20em;
+	font-weight: 700;
+	font-size: 2em;
+	color: #262116;
+}
+
+.title .byline
+{
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.90em;
+	color: #6F6F6F;
+}
+
+/** WRAPPER */
+
+#wrapper
+{
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: #FFFFFF url(images/bg01.png) repeat;
+}
+
+#footer-wrapper
+{
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.container
+{
+	width: 100%;
+	margin: 0px auto;
+}
+
+.clearfix
+{
+	clear: both;
+}
+
+/*********************************************************************************/
+/* Wrappers                                                                      */
+/*********************************************************************************/
+
+#header-wrapper
+{
+	overflow: hidden;
+	background: #262116;
+	margin-top: 80px;
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header
+{
+	overflow: hidden;
+	text-align: center;
+}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+#logo
+{
+	width: 80%;
+	margin: 0 auto;
+	padding: 2em 0em;
+	text-transform: uppercase;
+}
+
+#logo h1
+{
+	letter-spacing: 0.10em;
+	font-size: 3em;
+	color: #FFF;
+}
+
+#logo p
+{
+	letter-spacing: 0.10em;
+	color: #FFF;
+}
+
+#logo a
+{
+	text-decoration: none;
+	color: #FFF;
+}
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+#banner
+{
+	overflow: hidden;
+	margin-top: 5em;
+}
+
+	#banner	.image
+		{
+			display: inline-block;
+		}
+		
+		#banner	.image img
+			{
+				display: block;
+				width: 100%;
+			}
+
+/** MENU */
+#menu-wrapper
+{
+	background: rgb(15, 12, 11);
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+}
+
+#menu
+{
+	overflow: hidden;
+	height: 80px;
+}
+
+.option
+{
+	margin: 0px 20px;
+	padding: 20px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+	float: left;
+}
+
+#menu li
+{
+	display: inline-block;
+}
+
+.option a
+{
+	display: block;
+	padding: 0 30px;
+	color: #FFF;
+	line-height: 60px;
+}
+
+#menu a
+{
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 0.80em;
+	font-weight: 600;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a
+{
+	text-decoration: none;
+}
+
+#theme
+{
+    margin: 35px 2% 10px 3%;
+	float: left;
+	color: #FFF;
+	font-weight: 500;
+}
+
+#search
+{
+    margin: 0;
+    padding: 0px;
+    margin-top: 20px;
+	border-radius: 5px;
+	width: 15%;
+	height: 35px;
+	font-size: 1.1em;
+	background-image: url('../data/images/search_black2.png');
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+	padding-left: 40px;
+	float: right;
+}
+
+.log
+{
+	padding-top: 10px;
+    list-style: none;
+	text-align: center;
+	margin-right: 2%;
+	float: right;
+}
+
+.log li
+{
+    display: inline;
+}
+
+.log li+li:before
+{
+    color: rgb(255, 255, 255);
+    content: "/\00a0";
+}
+
+.log li a
+{
+    color: #FFF;
+	text-decoration: none;
+	padding: 0 15px;
+	line-height: 60px;
+}
+
+.logging
+{
+	display: block;
+	float: right;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #FFF;
+	line-height: 60px;
+}
+
+.dropdown
+{
+	display: block;
+	float: right;
+	padding-top: 10px;
+	width: 8%;
+	z-index: 5;
+	margin: 0 1%;
+}
+
+.dropdown-content
+{
+    display: none;
+	position: absolute;
+	margin-top: 60px;
+    right: 0;
+    background-color: whitesmoke;
+    min-width: 120px;
+	box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a
+{
+    padding: 3px 7px;
+    text-decoration: none;
+	display: block;
+	line-height: 45px;
+}
+
+.dropdown-content a:hover
+{
+	background-color: #cecece
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
+}
+
+#menu .current_page_item a
+{
+	border-radius: 5px 5px 0px 0px;
+	background: #262116;
+}
+
+/** PAGE */
+
+#page
+{
+	position: relative;
+	overflow: hidden;
+	padding: 6em 0em 5em 0em;
+}
+
+/** CONTENT */
+
+#content
+{
+	float: right;
+	width: 790px;
+}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+	#copyright
+{
+	overflow: hidden;
+	padding: 5em 0em;
+	text-align: center;	
+	background: #262116;
+}
+
+#copyright p
+{
+	letter-spacing: 0.20em;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.80em;
+	color: #6F6F6F;
+}
+
+#copyright a
+{
+	text-decoration: none;
+	color: #8C8C8C;
+}
+
+/*********************************************************************************/
+/* Welcome                                                                       */
+/*********************************************************************************/
+
+	#welcome
+{
+	overflow: hidden;
+	padding: 5em 0em;
+	border-bottom: 1px solid #E5E5E5;
+	text-align: center;
+}
+
+#welcome h2
+{
+	letter-spacing: 0.20em;
+	text-transform: uppercase;
+	font-size: 2.6em;
+}
+
+#welcome p
+{
+	font-size: 1.3em;
+}
+
+#welcome .byline
+{
+	display: block;
+	padding: 0em 0em 1.5em 0em;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.2em;
+	color: #6F6F6F;
+}
+
+/*********************************************************************************/
+/* Portfolio                                                                     */
+/*********************************************************************************/
+
+#portfolio-wrapper
+{
+	padding: 4em 0em;
+	text-align: center;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+#portfolio
+{
+	overflow: hidden;
+}
+
+#portfolio .title h2
+{
+	font-size: 1.2em;
+	color: #262116;
+}
+
+#portfolio .byline
+{
+	font-size: 1em;
+	color: #EEA7C1;
+}
+
+.label-div
+{
+	padding: 2em 0;
+}
+
+.column
+{
+	width: 20%;
+	margin: 1em 1%;
+	display: inline-block;
+}
+
+.label
+{
+	float: left;
+	margin-left: 7%;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+.label-more
+{
+	text-align: left;
+	margin-left: 7%;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+#search-title
+{
+	text-align: left;
+	margin-left: 7%;
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+.button
+{
+	display: block;
+	margin-right: 7%;
+	padding: 0.20em 1.5em 0.20em 1em;
+	background: #3f3f3f;
+	letter-spacing: 0.20em;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 400;
+	border-radius: 8px 0px 8px 0px;
+	font-size: 0.90em;
+	color: #FFF;
+	float: right;
+	transition: 0.5s;
+}
+
+.button:hover
+{
+	background: #262116;
+}
+
+.button:before
+{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	text-align: center;
+	color: #FFF;
+}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+	
+	#footer-wrapper
+{
+	overflow: hidden;
+	padding: 5em 0em;
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+
+#footer
+{
+	color: #ADADAD;
+}
+
+#footer .title h2
+{
+	font-weight: 400;
+	font-size: 1.2em;
+	color: #FFF;
+}
+
+#footer .title
+{
+	border-color: #2D2926 !important;
+}
+
+#footer .style1 li
+{
+	border-color: #2D2926 !important;
+}
+
+#footer .style1 a
+{
+	letter-spacing: 0.10em;
+	font-size:1em;
+	color: #B1B1B1;
+}
+
+@media only screen and (max-width: 700px){
+    #theme {
+        display: none;
+	}
+}
+
+@media only screen and (max-width: 1100px){
+	.dropdown {
+		width: 11%;
+	}
+}
+
+@media only screen and (max-width: 900px){
+    .column {
+        width: 45%;
+	}
+	.logging {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 600px){
+    .column {
+        width: 90%;
+	}
+	.option a {
+	    padding: 0 15px;
+	}
+	#menu {
+		height: 53px;
+	}
+	#header-wrapper {
+		margin-top: 52px;
+	}
+	#menu a {
+		line-height: 3.1em;
+	}
+	.option {
+		margin: 0px 10px;
+		padding: 15px 0px 0px 0px;
+	}
+	.log li a {
+		padding: 0 0.1em;
+	}
+	#search {
+		border-radius: 15px;
+		width: 16%;
+		height: 25px;
+		margin-top: 15px;
+		font-size: 0.8em;
+		background-image: url('../data/images/search_black2_small.png');
+		padding-left: 22px;
+	}
+	.log {
+		padding-left: 20px;
+	}
+	.logging {
+		width: 90%;
+	}
+	.dropdown-content {
+		margin-top: 40px;
+	}
+	.dropdown {
+		width: 20%;
+		margin: 0 3%;
+	}
+	#top-button {
+		bottom: 10vh;
+		right: 4vw;
+	}
+}

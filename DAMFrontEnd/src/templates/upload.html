@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>上传照片</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}" />
+	<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/messages_zh.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="menu-wrapper" style="position: static;">
+			<div id="menu" class="container">
+				<span id="theme">图片资源管理</span>
+				<ul class="option">
+					<li class="current_page_item"><a href="{{ url_for('discover') }}">发现</a></li>
+					<li><a href="{{ url_for('realtime') }}">实时</a></li>
+				</ul>
+				<div class="dropdown">
+					<a class="logging" href="#">username</a>
+					<div class="dropdown-content">
+						<a href="{{ url_for('upload') }}">上传照片</a>
+						<a href="#">注销</a>
+					</div>
+				</div>
+				<form target="_blank">
+					<input id="search" placeholder="关键字" autocomplete="off">
+				</form>
+			</div>
+			<!-- end #menu -->
+		</div>
+		<div id="upload-wrapper">
+			<div class="upload-zone">
+				<div id="upload-box">
+					<img id="image-show" src="">
+					<div id="upload-tip">
+						<img class="upload-icon" src="{{ url_for('static', filename='data/images/file.png') }}">
+						<p>支持PNG、JPG或JPEG格式<br />文件不超过50M</p>
+
+					</div>
+					<input type="file" id="file-input" name="file" accept="image/jpeg,image/jpg,image/png"
+						onchange="showImg(this)">
+				</div>
+			</div>
+			<div class="sidebar">
+				<div class="upload-div">
+					<form id="upload-form">
+						<label for="title">标题</label>
+						<input type="text" id="title" name="title">
+						<label for="description">描述</label>
+						<textarea id="description" name="description" placeholder="一句话描述您的照片……"></textarea>
+						<label>标签</label>
+						<br />
+						<input id="label1" class="labels" type="checkbox" name="label1" />
+						<label for="label1">标签1</label>
+						<input id="label2" class="labels" type="checkbox" name="label2" />
+						<label for="label2">标签2</label>
+						<input id="label3" class="labels" type="checkbox" name="label3" />
+						<label for="label3">标签3</label>
+						<input id="label4" class="labels" type="checkbox" name="label4" />
+						<label for="label4">标签4</label>
+						<input id="label5" class="labels" type="checkbox" name="label5" />
+						<label for="label5">标签5</label>
+						<input type="text" id="label" name="label">
+						<input type="submit" value="发布!" class="upload-button">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div id="copyright" class="container">
+		<p>&copy; Untitled. All rights reserved. | Photos by Fotogrph | Design by TEMPLATED.</p>
+	</div>
+	<div id="widget-tips">
+		<p id="tips-msg">hhhhhh</p>
+	</div>
+</body>
+
+</html>
